@@ -1,0 +1,185 @@
+.inicio-de-session {
+  width: 1440px;
+  height: 900px;
+  background-color: #ffffff;
+}
+
+.inicio-de-session .container {
+  position: relative;
+  width: 804px;
+  height: 574px;
+  top: 151px;
+  left: 308px;
+  background-color: #e5e6fc;
+  border-radius: 6px;
+  box-shadow: 0px 8px 17px #1a1a1a30, 0px 0px 2px #1a1a1a29;
+}
+
+.inicio-de-session .button {
+  all: unset;
+  box-sizing: border-box;
+  width: 213px;
+  height: 72px;
+  top: 434px;
+  left: 136px;
+  border-radius: 12px;
+  border: 1px solid;
+  border-color: #1a1a1a;
+  position: absolute;
+  overflow: hidden;
+}
+
+.inicio-de-session .text-wrapper {
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #1a1a1a;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 36px;
+  white-space: nowrap;
+}
+
+.inicio-de-session .div-wrapper {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  width: 213px;
+  height: 72px;
+  top: 435px;
+  left: 468px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.inicio-de-session .div {
+  position: absolute;
+  top: 17px;
+  left: 48px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 36px;
+  white-space: nowrap;
+}
+
+.inicio-de-session .textbox {
+  top: 116px;
+  position: absolute;
+  width: 619px;
+  height: 88px;
+  left: 92px;
+}
+
+.inicio-de-session .textfield {
+  position: absolute;
+  width: 618px;
+  height: 44px;
+  top: 43px;
+  left: 0;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+}
+
+.inicio-de-session .text {
+  position: absolute;
+  top: 0;
+  left: 46px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #c1c1c1;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 42px;
+  white-space: nowrap;
+}
+
+.inicio-de-session .img {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 8px;
+  left: 12px;
+}
+
+.inicio-de-session .text-wrapper-2 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #383838;
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 42px;
+  white-space: nowrap;
+}
+
+.inicio-de-session .textbox-2 {
+  top: 240px;
+  position: absolute;
+  width: 619px;
+  height: 88px;
+  left: 92px;
+}
+
+.inicio-de-session .hide {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 8px;
+  left: 579px;
+}
+
+.inicio-de-session .button-2 {
+  all: unset;
+  box-sizing: border-box;
+  width: 76px;
+  height: 66px;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  border-radius: 6px;
+  box-shadow: 0px 8px 17px #1a1a1a30, 0px 0px 2px #1a1a1a29;
+  position: absolute;
+  overflow: hidden;
+}
+
+.inicio-de-session .text-2 {
+  position: absolute;
+  top: 21px;
+  left: 58px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.inicio-de-session .arrow-left {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 13px;
+  left: 18px;
+}
+
+.inicio-de-session .text-wrapper-3 {
+  position: absolute;
+  top: 16px;
+  left: 330px;
+  font-family: "Audiowide-Regular", Helvetica;
+  font-weight: 400;
+  color: #1a1a1a;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: 68px;
+  white-space: nowrap;
+}
