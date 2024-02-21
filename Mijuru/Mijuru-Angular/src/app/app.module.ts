@@ -9,6 +9,7 @@ import { ContactUsComponent } from './Paginas/PreLoggin/contact-us/contact-us.co
 import { FaqsComponent } from './Paginas/PreLoggin/faqs/faqs.component';
 import { LoginComponent } from './Paginas/Login/login/login.component';
 import { RegisterComponent } from './Paginas/Login/register/register.component';
+import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar-preloggin.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { RegisterComponent } from './Paginas/Login/register/register.component';
     FaqsComponent,
     LoginComponent,
     RegisterComponent,
+    NavBarPrelogginComponent,
   ],
   imports: [
     BrowserModule,
