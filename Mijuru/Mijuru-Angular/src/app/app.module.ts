@@ -10,6 +10,7 @@ import { FaqsComponent } from './Paginas/PreLoggin/faqs/faqs.component';
 import { LoginComponent } from './Paginas/Login/login/login.component';
 import { RegisterComponent } from './Paginas/Login/register/register.component';
 import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar-preloggin.component';
+import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-preloggin.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar
     LoginComponent,
     RegisterComponent,
     NavBarPrelogginComponent,
+    FooterPrelogginComponent,
   ],
   imports: [
     BrowserModule,

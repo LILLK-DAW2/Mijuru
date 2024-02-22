@@ -6,6 +6,7 @@
   background: #E5E6FCFF;
   border-radius: 0px 0px 6px 6px;
   box-shadow: 0px 8px 17px #1a1a1a, 0px 0px 2px #1a1a1a;
+  padding:0 ;
 }
 
 
@@ -30,9 +31,12 @@
 }
 
 .title-decorator {
+  position: absolute;
   background-color: #686681;
   height: 4px;
   width: 100%;
+  bottom: 0;
+
 }
 .botonLogin {
   top: 50%;
@@ -71,7 +75,7 @@
 /* Hover */
 .button:hover {
   color: #2B2B2BFF;
-  background: #00000000;
+  background: rgba(89,89,89,0.44);
 }
 /* Pressed */
 .button:hover:active {
