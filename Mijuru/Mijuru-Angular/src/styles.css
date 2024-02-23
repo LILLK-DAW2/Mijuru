@@ -5,6 +5,7 @@
   font-style: normal;
 }
 
+/* botones */
 .kode-mono-400 {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
@@ -106,6 +107,15 @@
   font-style: italic;
 }
 
-
-
-
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}

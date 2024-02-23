@@ -11,6 +11,7 @@ import { LoginComponent } from './Paginas/Login/login/login.component';
 import { RegisterComponent } from './Paginas/Login/register/register.component';
 import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar-preloggin.component';
 import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-preloggin.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-p
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
