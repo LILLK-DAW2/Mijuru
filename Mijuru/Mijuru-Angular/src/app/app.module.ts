@@ -12,7 +12,7 @@ import { RegisterComponent } from './Paginas/Login/register/register.component';
 import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar-preloggin.component';
 import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-preloggin.component';
 import {ReactiveFormsModule} from "@angular/forms";
-
+import {ErrorComponent} from "./Paginas/error/error.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     RegisterComponent,
     NavBarPrelogginComponent,
     FooterPrelogginComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

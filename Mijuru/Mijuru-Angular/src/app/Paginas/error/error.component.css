@@ -1,0 +1,33 @@
+
+.button2 {
+  top: 32px;
+  left: 1148px;
+  width: 213px;
+  height: 72px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #FFFFFFFF;
+  background: #1A1A1AFF;
+  opacity: 1;
+  border: none;
+  border-radius: 12px;
+}
+/* Hover */
+.button2:hover {
+  color: #FFFFFFFF;
+  background: #2B2B2BFF;
+}
+/* Pressed */
+.button2:hover:active {
+  color: #FFFFFFFF;
+  background: #383838FF;
+}
+/* Disabled */
+.button2:disabled {
+  opacity: 0.4;
+}
