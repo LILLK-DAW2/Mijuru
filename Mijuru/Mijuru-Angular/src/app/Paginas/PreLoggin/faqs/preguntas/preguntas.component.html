@@ -1,0 +1,14 @@
+<div class="question-container" (click)="toggleAnswer()">
+  <div class="question-line"></div>
+  <div class="question">
+   {{ question }}
+  </div>
+  <img
+    loading="lazy"
+    [src]="expanded ? '/assets/ButtonDesplegado.png' : '/assets/ButtonDesplegar.png '"
+    class="question-image"
+  />
+</div>
+<div class="answer" *ngIf="expanded">
+  {{ answer }}
+</div>

@@ -13,6 +13,9 @@ import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar
 import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-preloggin.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {ErrorComponent} from "./Paginas/error/error.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTreeModule} from "@angular/material/tree";
+import {PreguntasComponent} from "./Paginas/PreLoggin/faqs/preguntas/preguntas.component";
 
 @NgModule({
   declarations: [
@@ -26,11 +29,13 @@ import {ErrorComponent} from "./Paginas/error/error.component";
     NavBarPrelogginComponent,
     FooterPrelogginComponent,
     ErrorComponent,
+    PreguntasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

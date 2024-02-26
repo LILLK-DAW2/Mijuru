@@ -1,1 +1,56 @@
-<p>faqs works!</p>
+<app-nav-bar-preloggin></app-nav-bar-preloggin>
+
+<div class="div">
+  <div class="div-2">
+    <div class="div-3">
+      <img
+        loading="lazy"
+        src="assets/Image%2036.png"
+        class="img"
+      />
+      <div class="div-4">
+        <div class="div-5">How can we help you?</div>
+        <div class="div-6">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/347d74febeae99fc06a1686c7f72f21507ecd4cfc3fb36663c9f9d8a30902f1a?"
+            class="img-2"
+          />
+          <div class="div-7">Search...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div-8">
+    <div class="div-9">
+      <div class="div-10">Preguntas frecuentes</div>
+      <div class="div-11">Exercitation dolore reprehenderit fugi</div>
+        <div class="tree">
+        <app-preguntas *ngFor="let qa of questionsAndAnswers" [question]="qa.question" [answer]="qa.answer"></app-preguntas>
+      </div>
+
+    </div>
+  </div>
+  <div class="div-24">
+    <div class="div-25">
+      <div class="column">
+        <div class="div-26">
+          <div class="div-27">Aun necesitas ayuda?</div>
+          <div class="div-28">
+            Do consectetur proident proident id eiusmod deserunt consequat
+            pariatur ad ex velit do Lorem reprehenderit.
+          </div>
+          <div class="div-29">Contactanos</div>
+        </div>
+      </div>
+      <div class="column-2">
+        <img
+          loading="lazy"
+          src="assets/Image%2044.png"
+          class="img-13"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-preloggin></app-footer-preloggin>
