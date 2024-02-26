@@ -31,6 +31,9 @@ class LogAuth extends Controller
                 'token'=>$token
             ],200);
         }
-        return 'Credenciales no válidas. Por favor, inténtalo de nuevo.';
+        return response()->json([
+            'token'=>'Credenciales no válidas. Por favor, inténtalo de nuevo.'
+        ]);
+
     }
 }

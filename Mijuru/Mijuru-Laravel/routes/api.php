@@ -20,7 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login',[LogAuth::class,'login']);
 
 
-Route::post('register',[RegisterAuth::class,'register']);
+Route::middleware('cors')->group(function (){
+    Route::post('login',[LogAuth::class,'login']);
+    Route::post('register',[RegisterAuth::class,'register']);
+});
