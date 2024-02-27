@@ -1,14 +1,24 @@
-<div class="question-container" (click)="toggleAnswer()">
-  <div class="question-line"></div>
-  <div class="question">
-   {{ question }}
+<div class="container-fluid">
+  <div class="row">
+    <div class="question-line"></div>
+    <div class="col-md-11">
+      <div class="question-container" (click)="toggleAnswer()">
+        <div class="question">
+          {{ question }}
+        </div>
+      </div>
+      <div class="answer" *ngIf="expanded">
+        {{ answer }}
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="question-container" (click)="toggleAnswer()">
+        <img
+          loading="lazy"
+          [src]="expanded ? '/assets/ButtonDesplegado.png' : '/assets/ButtonDesplegar.png'"
+          class="question-image"
+        />
+      </div>
+    </div>
   </div>
-  <img
-    loading="lazy"
-    [src]="expanded ? '/assets/ButtonDesplegado.png' : '/assets/ButtonDesplegar.png '"
-    class="question-image"
-  />
-</div>
-<div class="answer" *ngIf="expanded">
-  {{ answer }}
 </div>
