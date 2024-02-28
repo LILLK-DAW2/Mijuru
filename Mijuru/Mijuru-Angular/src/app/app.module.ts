@@ -14,8 +14,10 @@ import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-p
 import {ReactiveFormsModule} from "@angular/forms";
 import {ErrorComponent} from "./Paginas/error/error.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTreeModule} from "@angular/material/tree";
 import {PreguntasComponent} from "./Paginas/PreLoggin/faqs/preguntas/preguntas.component";
+import { CampusDashboardComponent } from './Paginas/Campus/campus-dashboard/campus-dashboard.component';
+import { CampusNavbarComponent } from './Components/Campus/campus-navbar/campus-navbar.component';
+import { CampusIconoComponent } from './Components/Campus/campus-icono/campus-icono.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,9 @@ import {PreguntasComponent} from "./Paginas/PreLoggin/faqs/preguntas/preguntas.c
     FooterPrelogginComponent,
     ErrorComponent,
     PreguntasComponent,
+    CampusDashboardComponent,
+    CampusNavbarComponent,
+    CampusIconoComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,8 +7,10 @@ import {RegisterComponent} from "./Paginas/Login/register/register.component";
 import {FaqsComponent} from "./Paginas/PreLoggin/faqs/faqs.component";
 import {ContactUsComponent} from "./Paginas/PreLoggin/contact-us/contact-us.component";
 import {ErrorComponent} from "./Paginas/error/error.component";
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [
+  {path: 'test', component:AppComponent },
   {path: 'welcome', component:LandigPageComponent },
   {path: 'login', component:LoginComponent },
   {path: 'register', component:RegisterComponent },
