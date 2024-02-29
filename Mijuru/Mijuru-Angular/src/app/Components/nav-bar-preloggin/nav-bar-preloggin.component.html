@@ -9,27 +9,38 @@
 
       <div class="col-md-2 mt-4 position-relative">
           <h1 class="title">
-            <a routerLink="/about-us" >
+            <a
+              style="position: relative;"
+              [style.bottom.px]="router.url === '/aboutUs' ? '10' : '0'"
+              href="/aboutUs" >
               Sobre nosotros</a></h1>
-          <div class="title-decorator"></div>
+        <div *ngIf="router.url === '/aboutUs'" class="title-decorator"></div>
       </div>
       <div class="col-md-2 mt-4 position-relative">
-        <a class="title">Preguntas Frecuentes</a>
-        <div class="title-decorator"></div>
+        <a
+          style="position: relative;"
+          [style.bottom.px]="router.url === '/faqs' ? '10' : '0'"
+           href="/faqs"
+           class="title">Preguntas Frecuentes</a>
+        <div *ngIf="router.url === '/faqs'" class="title-decorator"></div>
       </div>
       <div class="col-md-2 mt-4 position-relative">
-        <a class="title">Contactanos</a>
-        <div class="title-decorator"></div>
+        <a
+          style="position: relative;"
+          [style.bottom.px]="router.url === '/contactUs' ? '10' : '0'"
+          href="/contactUs"
+           class="title">Contactanos</a>
+        <div *ngIf="router.url === '/contactUs'" class="title-decorator"></div>
       </div>
 
       <div class="col-md-1 mt-4">
       </div>
 
       <div class="col-md-2 pt-4 px-5">
-         <a routerLink="/login"><button class="button">INICIO SESSION</button> </a>
+         <a href="/login"><button class="button">INICIO SESSION</button> </a>
       </div>
       <div class="col-md-2 pt-4 px-5">
-          <a routerLink="/register"><button class="button2">REGISTRO</button></a>
+          <a href="/register"><button class="button2">REGISTRO</button></a>
       </div>
     </div>
   </div>

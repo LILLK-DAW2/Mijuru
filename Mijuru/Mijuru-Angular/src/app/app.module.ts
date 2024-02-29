@@ -12,7 +12,12 @@ import { RegisterComponent } from './Paginas/Login/register/register.component';
 import { NavBarPrelogginComponent } from './Components/nav-bar-preloggin/nav-bar-preloggin.component';
 import { FooterPrelogginComponent } from './Components/footer-preloggin/footer-preloggin.component';
 import {ReactiveFormsModule} from "@angular/forms";
-
+import {ErrorComponent} from "./Paginas/error/error.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {PreguntasComponent} from "./Paginas/PreLoggin/faqs/preguntas/preguntas.component";
+import { CampusDashboardComponent } from './Paginas/Campus/campus-dashboard/campus-dashboard.component';
+import { CampusNavbarComponent } from './Components/Campus/campus-navbar/campus-navbar.component';
+import { CampusIconoComponent } from './Components/Campus/campus-icono/campus-icono.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +30,17 @@ import {ReactiveFormsModule} from "@angular/forms";
     RegisterComponent,
     NavBarPrelogginComponent,
     FooterPrelogginComponent,
+    ErrorComponent,
+    PreguntasComponent,
+    CampusDashboardComponent,
+    CampusNavbarComponent,
+    CampusIconoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

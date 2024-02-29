@@ -2,12 +2,12 @@
   <div class="container4-container3">
     <form [formGroup]="loginForm">
       <button class="container4-button1" (click)="onSubmit()">
-        <span class="container4-text"><span class="kode-mono-400">INICIO SESSION</span></span>
+        <span class="container4-text"><span class="roboto-regular">INICIO SESSION</span></span>
       </button>
-      <button class="container4-button11" (click)="onSubmit()">
-        <span class="container4-text02"><span class="kode-mono-400">REGISTRO</span></span>
+      <button class="container4-button11" routerLink="/register" >
+        <span class="container4-text02"><span class="roboto-regular">REGISTRO</span></span>
       </button>
-      <button type="submit" class="container4-button9">
+      <button routerLink="/welcome" type="submit" class="container4-button9">
         <span class="container4-text04"></span>
         <img src="/assets/flecha.png" alt="Arrowleft3035" class="container4-arrowleft" />
       </button>
@@ -23,7 +23,7 @@
         <span class="container4-text10"><span class="roboto-thin">Contraseña</span></span>
         <div class="container4-textfield1">
           <input type="password" class="container4-input" formControlName="contraseña">
-          <img src="/assets/Envelope%201.png" alt="Mail3051" class="container4-mail1" />
+          <img src="/assets/Lock%201.png" alt="Mail3051" class="container4-mail1" />
         </div>
       </div>
     </form>

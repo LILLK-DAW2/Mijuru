@@ -1,1 +1,53 @@
-<p>faqs works!</p>
+<app-nav-bar-preloggin></app-nav-bar-preloggin>
+
+<div class="div">
+  <div class="div-2">
+    <div class="div-3">
+      <img
+        loading="lazy"
+        src="assets/Image36.png"
+        class="img"
+      />
+      <div class="div-4">
+        <div class="div-5">Como te podemos ayudar?</div>
+        <input class="div-6" placeholder="Buscar...">
+
+      </div>
+    </div>
+  </div>
+  <div class="div-8">
+    <div class="div-9">
+      <div class="div-10">Preguntas frecuentes</div>
+      <div class="div-11">Exercitation dolore reprehenderit fugi</div>
+        <div class="tree">
+        <app-preguntas *ngFor="let qa of questionsAndAnswers" [question]="qa.question" [answer]="qa.answer"></app-preguntas>
+      </div>
+
+    </div>
+  </div>
+  <div class="div-24">
+    <div class="div-25">
+      <div class="column">
+        <div class="div-26">
+          <div class="div-27">Aun necesitas ayuda?</div>
+          <div class="div-28 ">
+            <p class="roboto-regular">
+              Do consectetur proident proident id eiusmod deserunt consequat
+              pariatur ad ex velit do Lorem reprehenderit.
+            </p>
+
+          </div>
+          <button routerLink="/contactUs" class="div-29 ">Contactanos</button>
+        </div>
+      </div>
+      <div class="column-2">
+        <img
+          loading="lazy"
+          src="assets/Image44.png"
+          class="img-13"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer-preloggin></app-footer-preloggin>
