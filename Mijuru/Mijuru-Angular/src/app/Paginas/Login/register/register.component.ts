@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService} from "../../../services/userServices/user.service";
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,public usersService: UserService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -32,8 +33,23 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-
+    this.register();
     // Si se llega aquí, el formulario es válido, se puede proceder con los datos
     console.log(this.registerForm.value);
+  }
+  register(){
+
+    const nombre_u = this.registerForm.value.usuario;
+    const nombre = this.registerForm.value.nombre;
+    const apellidos = this.registerForm.value.apellido;
+    const fecha_n = this.registerForm.value.fechaNacimiento;
+    const email = this.registerForm.value.correo;
+    const password= this.registerForm.value.contraseña;
+
+    const token =this.usersService.register(nombre_u,nombre,apellidos,email,fecha_n, password).subscribe({
+      next: value => console.log(value),
+      error: err => alert(err)
+    });
+    console.log('tokenddd'+token);
   }
 }
