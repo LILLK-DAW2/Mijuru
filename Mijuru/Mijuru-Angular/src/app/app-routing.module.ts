@@ -8,6 +8,7 @@ import {FaqsComponent} from "./Paginas/PreLoggin/faqs/faqs.component";
 import {ContactUsComponent} from "./Paginas/PreLoggin/contact-us/contact-us.component";
 import {ErrorComponent} from "./Paginas/error/error.component";
 import {AppComponent} from "./app.component";
+import {CampusDashboardComponent} from "./Paginas/Campus/campus-dashboard/campus-dashboard.component";
 
 const routes: Routes = [
   {path: 'test', component:AppComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'faqs', component:FaqsComponent },
   {path: 'contactUs', component:ContactUsComponent},
   {path: 'error', component:ErrorComponent},
+  {path: 'dashboard', component:CampusDashboardComponent},
   {path: '',redirectTo: 'welcome',pathMatch: 'full'},
   {path: '**' ,redirectTo: '/error',pathMatch: 'full'},
 ];
