@@ -1,38 +1,35 @@
 <div class="container6-container">
   <div class="container6-container6">
     <div class="container6-collapsed-sidebar-menu1">
-      <div class="container6-frame">
-        <img src="assets/assets%20navbar%20campus/Chat%202-1.png" alt="Chat3911" class="container6-chat" />
+      <div class="container6-frame" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
+        <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Chat%202.png' : 'assets/assets%20navbar%20campus/Chat%202-1.png'" alt="Chat3911" class="container6-chat" />
         <span class="container6-text"><span>Chat</span></span>
         <div class="container6-frame1"></div>
       </div>
-      <div class="container6-frame2-selected">
-        <img src="assets/assets%20navbar%20campus/Home%201.png" alt="Home3910" class="container6-home" />
+
+
+      <div class="container6-frame2" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
+        <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Home%201.png' : 'assets/assets%20navbar%20campus/Home%201-1.png'" alt="Home3910" class="container6-home" />
         <span class="container6-text02"><span>Home</span></span>
       </div>
-      <div class="container6-frame3">
-        <img src="/assets/assets%20navbar%20campus/Notifications%201.png" alt="Bell3910" class="container6-bell" />
+
+      <div class="container6-frame3" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
+        <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Notifications%201-1.png' : 'assets/assets%20navbar%20campus/Notifications%201.png'" alt="Bell3910" class="container6-bell" />
         <span class="container6-text04"><span>Notifications</span></span>
         <div class="container6-frame4">
           <span class="container6-text06"><span>99+</span></span>
         </div>
       </div>
-      <div class="container6-frame5">
-        <img
-          src="/assets/assets%20navbar%20campus/Layout%201-1.png"
-          alt="Layout113911"
-          class="container6-layout11"
-        />
+      <div class="container6-frame5" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
+        <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Layout%201.png' : 'assets/assets%20navbar%20campus/Layout%201-1.png'" alt="Layout113911" class="container6-layout11" />
         <span class="container6-text08"><span>Trello</span></span>
       </div>
-      <div class="container6-frame6">
-        <img
-          src="/assets/assets%20navbar%20campus/Inventory%202%201.png"
-          alt="Archivedrawer3911"
-          class="container6-archivedrawer"
-        />
+
+      <div class="container6-frame6" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
+        <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Inventory%202%201-1.png' : 'assets/assets%20navbar%20campus/Inventory%202%201.png'" alt="Archivedrawer3911" class="container6-archivedrawer" />
         <span class="container6-text10"><span>Gestor de archivos</span></span>
       </div>
+
     </div>
     <div class="container6-group10">
       <div class="container6-collapsed-sidebar-menu2">

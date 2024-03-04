@@ -1,11 +1,23 @@
 :host {
   display: contents;
 }
+.container6-frame2:hover,
+.container6-frame3:hover,
+.container6-frame5:hover,
+.container6-frame:hover,
+.container6-frame6:hover {
+  background-color: rgba(124, 154, 207, 0.5); /* Cambia el color y la opacidad según tus preferencias */
+  cursor: pointer;
+}
+.container-selected {
+  background-color: rgba(124, 154, 207, 1);
+}
 .container6-container {
   width: 100%;
+  position: fixed;
   display: flex;
   overflow: auto;
-  min-height: 100vh;
+  height: 100%;
   align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,7 +54,6 @@
   position: absolute;
   align-items: flex-start;
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0);
 }
 .container6-chat {
   top: 12px;
@@ -58,9 +69,7 @@
   height: auto;
   position: absolute;
   font-size: 14px;
-  font-style: Regular;
   text-align: left;
-  font-family: Inter;
   font-weight: 400;
   line-height: 22px;
   font-stretch: normal;
@@ -92,18 +101,7 @@
   align-items: flex-start;
   flex-shrink: 0;
 }
-.container6-frame2-selected {
-  top: 0px;
-  left: 0px;
-  width: 168px;
-  height: 78px;
-  display: flex;
-  overflow: hidden;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  background-color: rgba(124, 154, 207, 1);
-}
+
 .container6-home {
   top: 12px;
   left: 68px;
@@ -114,14 +112,12 @@
 .container6-text02 {
   top: 44px;
   left: 63.5px;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(95, 95, 95, 1);
   height: auto;
   position: absolute;
   font-size: 14px;
-  font-style: Bold;
   text-align: left;
-  font-family: Inter;
-  font-weight: 700;
+  font-weight: 400  ;
   line-height: 22px;
   font-stretch: normal;
   text-decoration: none;
@@ -136,21 +132,8 @@
   position: absolute;
   align-items: flex-start;
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0);
 }
-.container6-frame3-selected {
-  top: 128.39999389648438px;
-  left: 0px;
-  width: 168px;
-  height: 78px;
-  display: flex;
-  overflow: hidden;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  background-color: rgba(124, 154, 207, 1);
 
-}
 .container6-bell {
   top: 12px;
   left: 68px;
@@ -165,9 +148,7 @@
   height: auto;
   position: absolute;
   font-size: 14px;
-  font-style: Regular;
   text-align: left;
-  font-family: Inter;
   font-weight: 400;
   line-height: 22px;
   font-stretch: normal;
@@ -195,9 +176,7 @@
   height: auto;
   position: absolute;
   font-size: 11px;
-  font-style: Regular;
   text-align: left;
-  font-family: Inter;
   font-weight: 400;
   line-height: 11px;
   font-stretch: normal;
@@ -213,20 +192,8 @@
   position: absolute;
   align-items: flex-start;
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0);
 }
-.container6-frame5-selected {
-  top: 256.79998779296875px;
-  left: 0px;
-  width: 168px;
-  height: 78px;
-  display: flex;
-  overflow: hidden;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  background-color: rgba(124, 154, 207, 1);
-}
+
 .container6-layout11 {
   top: 12px;
   left: 68px;
@@ -241,9 +208,7 @@
   height: auto;
   position: absolute;
   font-size: 14px;
-  font-style: Regular;
   text-align: left;
-  font-family: Inter;
   font-weight: 400;
   line-height: 22px;
   font-stretch: normal;
@@ -260,21 +225,8 @@
   position: absolute;
   align-items: flex-start;
   flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0);
 }
-.container6-frame6-selected {
-  top: 513.5999755859375px;
-  left: 0px;
-  left: 0px;
-  width: 168px;
-  height: 78px;
-  display: flex;
-  overflow: hidden;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
-  background-color: rgba(124, 154, 207, 1);
-}
+
 .container6-archivedrawer {
   top: 12px;
   left: 68px;
@@ -289,9 +241,7 @@
   height: auto;
   position: absolute;
   font-size: 14px;
-  font-style: Regular;
   text-align: left;
-  font-family: Inter;
   font-weight: 400;
   line-height: 22px;
   font-stretch: normal;
@@ -336,6 +286,7 @@
   width: 38px;
   height: 38px;
   position: absolute;
+  cursor: pointer;
 }
 .container6-avatar1 {
   top: 136px;
@@ -356,6 +307,7 @@
   width: 44px;
   height: 44px;
   position: absolute;
+  cursor: pointer;
 }
 .container6-frame8 {
   top: 32.05635070800781px;
@@ -379,9 +331,7 @@
   height: auto;
   position: absolute;
   font-size: 11px;
-  font-style: Regular;
   text-align: left;
-  font-family: Manrope;
   font-weight: 400;
   line-height: 11px;
   font-stretch: normal;
@@ -393,4 +343,5 @@
   width: 24px;
   height: 24px;
   position: absolute;
+  cursor: pointer;
 }
