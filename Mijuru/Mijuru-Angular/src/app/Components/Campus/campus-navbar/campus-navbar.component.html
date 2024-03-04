@@ -1,3 +1,8 @@
+<div *ngIf="notificaciones" class="notfificacions">
+
+  <app-notification-page></app-notification-page>
+</div>
+
 <div class="container6-container">
   <div class="container6-container6">
     <div class="container6-collapsed-sidebar-menu1">
@@ -13,13 +18,16 @@
         <span class="container6-text02"><span>Home</span></span>
       </div>
 
-      <div class="container6-frame3" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
-        <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Notifications%201-1.png' : 'assets/assets%20navbar%20campus/Notifications%201.png'" alt="Bell3910" class="container6-bell" />
+      <div class="container6-frame3" [ngClass]="{ 'container-selected': notificaciones }"  (click)="notificacion()">
+        <img [src]="notificaciones ? 'assets/assets%20navbar%20campus/Notifications%201-1.png' : 'assets/assets%20navbar%20campus/Notifications%201.png'" alt="Bell3910" class="container6-bell" />
         <span class="container6-text04"><span>Notifications</span></span>
         <div class="container6-frame4">
           <span class="container6-text06"><span>99+</span></span>
         </div>
       </div>
+
+
+
       <div class="container6-frame5" [ngClass]="{ 'container-selected': router.url === '/error' }" routerLink="/error">
         <img [src]="router.url === '/error' ? 'assets/assets%20navbar%20campus/Layout%201.png' : 'assets/assets%20navbar%20campus/Layout%201-1.png'" alt="Layout113911" class="container6-layout11" />
         <span class="container6-text08"><span>Trello</span></span>
@@ -61,9 +69,4 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col col-xl-2"></div>
-    <div class="col"></div>
-  </div>
-</div>
+

@@ -7,10 +7,15 @@ import {Router} from "@angular/router";
   styleUrls: ['./campus-navbar.component.css']
 })
 export class CampusNavbarComponent implements OnInit {
+  notificaciones: boolean = false;
 
   constructor(public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  notificacion() {
+    this.notificaciones = !this.notificaciones;
   }
 
 }
