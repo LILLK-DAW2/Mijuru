@@ -1,7 +1,6 @@
 
 .content {
   margin-left: 170px; /* Espacio interno */
-  background-color: rgba(0, 0, 0, 0.5); /* Cambia el último valor para ajustar la opacidad */
   height: 100%;
 }
 

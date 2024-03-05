@@ -20,6 +20,7 @@ import { CampusNavbarComponent } from './Components/Campus/campus-navbar/campus-
 import { CampusIconoComponent } from './Components/Campus/campus-icono/campus-icono.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NotificationPageComponent } from './Components/Campus/notification-page/notification-page.component';
+import { NotificationComponent } from './Components/Campus/notification-page/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { NotificationPageComponent } from './Components/Campus/notification-page
     CampusNavbarComponent,
     CampusIconoComponent,
     NotificationPageComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
