@@ -73,12 +73,13 @@ div:hover{
   height: 50px;
 }
 .div-9:hover{
-  background-color: #F5C4C6; /* Cambia el color y la opacidad según tus preferencias */
+  background-color: #8d0307; /* Cambia el color y la opacidad según tus preferencias */
   cursor: pointer;
 }
 .div-8:hover{
-  background-color: #B8F5CD; /* Cambia el color y la opacidad según tus preferencias */
+  background-color: #308a54; /* Cambia el color y la opacidad según tus preferencias */
   cursor: pointer;
+
 }
 @media (max-width: 640px) {
   .div-8 {
