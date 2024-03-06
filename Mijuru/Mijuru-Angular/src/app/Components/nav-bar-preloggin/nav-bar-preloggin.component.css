@@ -53,8 +53,8 @@
 }
 /* Button 1 */
 .button {
-  top: 32px;
-  left: 894px;
+  position: relative;
+  left: 60px;
   width: 213px;
   height: 72px;
   padding: 0 12px;
@@ -88,8 +88,7 @@
 }
 
 .button2 {
-  top: 32px;
-  left: 1148px;
+  position: relative;
   width: 213px;
   height: 72px;
   padding: 0 12px;
