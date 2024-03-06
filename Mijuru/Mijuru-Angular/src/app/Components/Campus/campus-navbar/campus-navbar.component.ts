@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-campus-navbar',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./campus-navbar.component.css']
 })
 export class CampusNavbarComponent implements OnInit {
+  notificaciones: boolean = false;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  notificacion() {
+    this.notificaciones = !this.notificaciones;
   }
 
 }
