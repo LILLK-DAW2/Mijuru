@@ -26,7 +26,7 @@ return new class extends Migration
             $table->binary('foto_perfil')->nullable();
             $table->string('tipo_usuario')->default('N');
             $table->string('estado')->default('A');
-            $table->timestamp('deleated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\campus\campusCrud\CampusController;
+use App\Http\Controllers\campus\userController;
 use App\Http\Controllers\Log\LogAuth;
 use App\Http\Controllers\Log\RegisterAuth;
 use Illuminate\Http\Request;
@@ -25,4 +27,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('cors')->group(function (){
     Route::post('login',[LogAuth::class,'login']);
     Route::post('register',[RegisterAuth::class,'register']);
+
+    //Campus crud
+    Route::prefix('campus')->group(function () {
+        Route::get('/', [CampusController::class, 'index']);
+        Route::post('/store', [CampusController::class, 'store']);
+        Route::put('/update', [CampusController::class, 'update']);
+        Route::delete('/destroy', [CampusController::class, 'destroy']);
+    });
+    //User Crud
+    Route::prefix('users')->group(function () {
+        Route::get('/', [UserController::class, 'index']);
+        Route::post('/store', [UserController::class, 'store']);
+        Route::delete('/destroy', [UserController::class, 'destroy']);
+        Route::put('/update', [UserController::class, 'update']);
+    });
 });

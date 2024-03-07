@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use app\Models\Campus;
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 
 class CampusSeeder extends Seeder
@@ -16,21 +14,17 @@ class CampusSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create();
-
-        // Obtener todos los IDs de usuarios existentes
-        $userIds = User::pluck('id')->toArray();
-
-        for ($i = 0; $i < 10; $i++) {
-            $campus = new Campus();
-            $campus->nombre_campus = $faker->unique()->sentence(3);
-            $campus->descripcion = $faker->paragraph(3);
-            $campus->foto_portada = $faker->imageUrl();
-            $campus->creador = $faker->randomElement($userIds);
-            $campus->estado = $faker->randomElement(['A', 'B']); // Cambiar según tus necesidades
-            $campus->fecha_c = $faker->date();
-            $campus->fecha_b = $faker->randomElement([null, $faker->dateTimeBetween('-1 year', 'now')]); // Puede ser nulo o una fecha aleatoria
-            $campus->save();
-        }
+        DB::table('campus')->insert([
+            'nombre_campus' => 'Campus A',
+            'descripcion' => 'Descripción del Campus A',
+            'foto_portada' => 'foto1.jpg',
+            'creador' => 1, // ID del usuario creador
+            'foro_padre' => null,
+            'herramientas_campus' => json_encode(['herramienta1', 'herramienta2']),
+            'estado' => '1',
+            'fecha_b' => null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

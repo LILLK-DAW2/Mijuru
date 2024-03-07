@@ -20,6 +20,9 @@ class LogAuth extends Controller
         $credenciales = $request->only('nombre_u', 'password');
 
         $user = User::where('nombre_u', $credenciales['nombre_u'])->first();
+        if ($user->estado == 0){
+            return response()->json('El usuario esta eliminado');
+        }
 
         if ($user && Hash::check($credenciales['password'], $user->password)) {
 
