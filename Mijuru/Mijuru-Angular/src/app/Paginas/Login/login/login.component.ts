@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Observable} from "rxjs";
 import {UserService} from "../../../services/userServices/user.service";
 import {Router} from "@angular/router";
+import {PopUpService} from "../../../services/popUpServices/pop-up.service";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,public userService: UserService,private router: Router) { }
+  constructor(private formBuilder: FormBuilder,private userService: UserService,private router: Router,private popup :PopUpService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -37,10 +38,11 @@ export class LoginComponent implements OnInit {
 
 
     const token = this.userService.login(nombre_u, password).subscribe({
-      next: value => console.log(value),
-      error: err => alert(err)
+      next: value => this.router.navigate(['/dashboard']) ,
+      error: err =>{var errorMessage = err.error.error;
+        this.popup.openDialog('Error',errorMessage)}
     });
     console.log(token);
-    this.router.navigate(['/dashboard']);
+
   }
 }

@@ -21,6 +21,11 @@ import { CampusIconoComponent } from './Components/Campus/campus-icono/campus-ic
 import {HttpClientModule} from "@angular/common/http";
 import { NotificationPageComponent } from './Components/Campus/notification-page/notification-page.component';
 import { NotificationComponent } from './Components/Campus/notification-page/notification/notification.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import { ConfirmationPopUpComponent } from './Components/popUps/confirmation-pop-up/confirmation-pop-up.component';
+import {PopUpComponent} from "./Components/popUps/pop-up/pop-up.component";
+import {PopUpService} from "./services/popUpServices/pop-up.service";
 
 @NgModule({
   declarations: [
@@ -40,6 +45,8 @@ import { NotificationComponent } from './Components/Campus/notification-page/not
     CampusIconoComponent,
     NotificationPageComponent,
     NotificationComponent,
+    PopUpComponent,
+    ConfirmationPopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,8 @@ import { NotificationComponent } from './Components/Campus/notification-page/not
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
