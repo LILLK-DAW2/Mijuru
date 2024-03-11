@@ -250,6 +250,7 @@
 .div-13 {
   margin-top: 73px;
   font: 24px/36px Inter, sans-serif;
+  text-align: right;
 }
 @media (max-width: 991px) {
   .div-13 {

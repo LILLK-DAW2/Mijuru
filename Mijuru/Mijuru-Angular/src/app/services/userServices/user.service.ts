@@ -6,24 +6,33 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class UserService {
+  private token;
 
-  constructor(private http: HttpClient) { }
-
-  login( nombre_u: string, password: string): Observable<any> {
-
-
-    console.log(nombre_u);
-    console.log('pass:::.'+password);
-
-    return this.http.post('http://127.0.0.1:8000/login?nombre_u='+nombre_u+'&password='+password, {
-
-    });
+  constructor(private http: HttpClient) {
+    this.token = localStorage.getItem('token');
   }
-  register(nombre_u: string, nombre:string, apellidos:string,email: string,fecha_n:Date, password: string): Observable<any> {
 
-    console.log('fecha'+fecha_n);
-    return this.http.post('http://127.0.0.1:8000/register?nombre_u='+nombre_u+'&nombre='+nombre+'&apellidos='+apellidos+'&fecha_n='+fecha_n+'&email='+email+'&password='+password, {
-
-    });
+  login(nombre_u: string, password: string): Observable<any> {
+    const body = { nombre_u, password }; // Creamos un objeto con los datos de inicio de sesión
+    return this.http.post<any>('http://127.0.0.1:8000/login', body);
   }
-}
+  register(nombre_u: string, nombre: string, apellidos: string, email: string, fecha_n: Date, password: string): Observable<any> {
+    const body = { nombre_u, nombre, apellidos, email, fecha_n, password }; // Creamos un objeto con los datos de registro
+    return this.http.post('http://127.0.0.1:8000/register', body);
+  }
+  logout(): Observable<any> {
+    var token = this.getToken();
+    console.log('logout: ' + token)
+    return this.http.post('http://127.0.0.1:8000/logout?token='+token,{});
+  }
+  setToken(token:string):void{
+    this.token =token;
+    localStorage.setItem('token', token);
+  }
+  getToken(): string{
+    return this.token;
+  }
+
+
+
+  }

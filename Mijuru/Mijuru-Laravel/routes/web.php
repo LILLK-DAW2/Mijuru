@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 Route::middleware('cors')->group(function (){
     Route::post('login',[LogAuth::class,'login']);
+    Route::post('logout',[LogAuth::class,'logout']);
     Route::post('register',[RegisterAuth::class,'register']);
 
     //Campus Crud

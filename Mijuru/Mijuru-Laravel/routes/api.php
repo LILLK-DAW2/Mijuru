@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware('cors')->group(function (){
     Route::post('login',[LogAuth::class,'login']);
+    Route::post('logout',[LogAuth::class,'logout']);
     Route::post('register',[RegisterAuth::class,'register']);
 
     //Campus crud

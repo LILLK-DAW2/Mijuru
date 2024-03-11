@@ -35,6 +35,31 @@ class LogAuth extends Controller
         Auth::login($user);
         $token = $request->session()->token();
         $user->update(['remember_token' => $token]);
+        $user->save();
 
         return response()->json(['token' => $token], 200);
-    }}
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        // Obtener el token de la solicitud
+
+        $token = $request->token;
+        //dd($token);
+
+
+        // Buscar al usuario con el token proporcionado
+        $user = User::where('remember_token', $token)->first();
+
+        if ($user) {
+            // Actualizar el campo remember_token a null
+            $user->update(['remember_token' => null]);
+            $user->save();
+            return response()->json(['mensaje' => 'Cerraste sesión exitosamente'], 200);
+        } else {
+            return response()->json(['error' => 'No se encontró ningún usuario con el token proporcionado'], 404);
+        }
+    }
+}

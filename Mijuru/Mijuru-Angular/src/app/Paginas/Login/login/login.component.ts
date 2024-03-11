@@ -38,11 +38,19 @@ export class LoginComponent implements OnInit {
 
 
     const token = this.userService.login(nombre_u, password).subscribe({
-      next: value => this.router.navigate(['/dashboard']) ,
-      error: err =>{var errorMessage = err.error.error;
-        this.popup.openDialog('Error',errorMessage)}
+      next: response => {
+        const token = response.token; // Aquí obtenemos el token de la respuesta
+        console.log(token);
+        this.userService.setToken(token);
+        this.router.navigate(['/dashboard']);
+      },
+      error: err =>{
+        var errorMessage = err.error.error;
+        this.popup.openDialog('Error', errorMessage)
+        console.log(errorMessage)
+      }
     });
-    console.log(token);
+    console.log( token);
 
   }
 }
