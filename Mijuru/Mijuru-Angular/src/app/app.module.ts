@@ -26,6 +26,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { ConfirmationPopUpComponent } from './Components/popUps/confirmation-pop-up/confirmation-pop-up.component';
 import {PopUpComponent} from "./Components/popUps/pop-up/pop-up.component";
 import {PopUpService} from "./services/popUpServices/pop-up.service";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {PopUpService} from "./services/popUpServices/pop-up.service";
     HttpClientModule,
     MatDialogModule,
     MatButtonModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

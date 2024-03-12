@@ -11,7 +11,22 @@ import {ConfirmationPopUpComponent} from "./Components/popUps/confirmation-pop-u
 })
 export class AppComponent {
   title = 'Mijuru-Angular';
-  constructor(private popup: PopUpService) {}
+  slides = [];
+
+  constructor(private popup: PopUpService) {
+    for (let i = 0; i < 5; i++) {
+      const hexagons = [];
+      for (let j = 0; j < 14; j++) {
+        hexagons.push({
+          imageUrl: 'https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg',
+          title: 'Title ' + (i * 4 + j + 1),
+          description: 'Description ' + (i * 4 + j + 1)
+        });
+      }
+      this.slides.push({ id: i + 1, hexagons: hexagons });
+    }
+
+  }
 
  /* async openConfirmationDialog(): Promise<void> {
     if (await this.popup.openConfirmationDialog('pepinollo', 'asdasda')) {

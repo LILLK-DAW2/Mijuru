@@ -5,6 +5,21 @@
   font-style: normal;
 }
 
+.carousel-indicators{
+  background: rgba(0, 0, 0, 0.29);
+}
+.carousel-control-prev-icon{
+ height: 32px;
+  width: 32px;
+}
+.carousel-indicators{
+  bottom: -20px;
+}
+.carousel-item{
+  background: #B9B7CC;
+
+}
+
 /* botones */
 .kode-mono-400 {
   font-family: "Kode Mono", monospace;
