@@ -7,18 +7,27 @@
 
 .carousel-indicators{
   background: rgba(0, 0, 0, 0.29);
-}
-.carousel-control-prev-icon{
- height: 32px;
-  width: 32px;
-}
-.carousel-indicators{
-  bottom: -20px;
+  margin: 0;
 }
 .carousel-item{
   background: #B9B7CC;
+}
+.carousel-control-next-icon{
+  background-image: url("assets/blackArrow/right-arrow.png");
 
 }
+
+.carousel-control-prev-icon {
+  background-image: url("assets/blackArrow/left-arrow.png");
+}
+.carousel-control-next, .carousel-control-prev {
+  width: fit-content;
+  height: fit-content;
+  top: 50vh;
+  padding: 0 50px 20px;
+}
+
+
 
 /* botones */
 .kode-mono-400 {

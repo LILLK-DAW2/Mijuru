@@ -1,11 +1,18 @@
-<style>
-
-  .content {
-    margin-left: 170px; /* Espacio interno */
-    height: 100%;
-  }
-</style>
 <app-campus-navbar></app-campus-navbar>
 <div class="content">
- <p>ajsdbh</p>
+  <ngb-carousel [interval]="0">
+    <ng-template ngbSlide *ngFor="let slide of slides">
+      <ul id="hexGrid">
+        <li class="hex" *ngFor="let hex of slide.hexagons">
+          <div class="hexIn">
+            <a class="hexLink" href="/dashboard">
+              <img src="{{ hex.imageUrl }}" alt="" />
+              <h1>{{ hex.title }}</h1>
+              <p>{{ hex.description }}</p>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </ng-template>
+  </ngb-carousel>
 </div>
