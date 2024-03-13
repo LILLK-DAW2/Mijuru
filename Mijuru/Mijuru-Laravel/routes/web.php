@@ -38,5 +38,7 @@ Route::middleware('cors')->group(function (){
         Route::post('/store', [UserController::class, 'store']);
         Route::delete('/destroy', [UserController::class, 'destroy']);
         Route::put('/update', [UserController::class, 'update']);
+        Route::get('/show', [UserController::class, 'show']);
+
     });
 });

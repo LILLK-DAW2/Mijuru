@@ -7,6 +7,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
 class userController extends Controller
@@ -26,6 +27,27 @@ class userController extends Controller
             return response()->json('No se encontraron usuarios', 404);
         } catch (\Exception $e) {
             return response()->json('Error al obtener usuarios: ' . $e->getMessage(), 500);
+        }
+    }
+    public function show(Request $request)
+    {
+        try {
+            // Verificar si se proporcionó un token en la solicitud
+            $token = $request->token;
+            if (!$token) {
+                return response()->json('No se proporcionó un token en la solicitud', 400);
+            }
+
+            // Buscar el usuario asociado al token en la base de datos
+            $user = User::where('remember_token', $token)->first();
+            if (!$user) {
+                return response()->json('Token no válido', 401);
+            }
+
+            // Devolver la información del usuario
+            return response()->json($user, 200);
+        } catch (\Exception $e) {
+            return response()->json('Error al obtener el usuario: ' . $e->getMessage(), 500);
         }
     }
 
