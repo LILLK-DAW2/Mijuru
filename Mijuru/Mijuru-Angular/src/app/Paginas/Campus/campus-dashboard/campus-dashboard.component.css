@@ -31,6 +31,7 @@
   position: relative;
   visibility:hidden;
   outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  width: 18.73%;
 }
 .hex::after{
   content:'';
@@ -128,7 +129,7 @@
     padding-bottom: 4.4%
   }
   .hex {
-    width: 20%; /* = 100 / 5 */
+    /*width: 20%; /* = 100 / 5 */
   }
   .hex:nth-child(9n+6){ /* first hexagon of even rows */
     margin-left:10%;  /* = width of .hex / 2  to indent even rows */
@@ -140,7 +141,7 @@
     padding-bottom: 5.5%
   }
   .hex {
-    width: 25%; /* = 100 / 4 */
+    /*width: 25%; /* = 100 / 4 */
   }
   .hex:nth-child(7n+5){ /* first hexagon of even rows */
     margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */

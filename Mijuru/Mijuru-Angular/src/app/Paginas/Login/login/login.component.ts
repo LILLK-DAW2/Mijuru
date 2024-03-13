@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
         console.log(token);
         this.userService.setToken(token);
         this.router.navigate(['/dashboard']);
+        this.popup.openDialog('Bienvenido', `Hola ${nombre_u}`)
       },
       error: err =>{
         var errorMessage = err.error.error;

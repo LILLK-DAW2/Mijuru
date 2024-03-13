@@ -158,8 +158,8 @@
   aspect-ratio: 1.33;
   object-fit: auto;
   object-position: center;
-  width: 630px;
-  margin-top: 30  px;
+  width: 646px;
+  margin-top: 30px;
   max-width: 100%;
 
   border-radius: 8px;
@@ -195,16 +195,15 @@
 }
 .img-4 {
   aspect-ratio: 1.33;
-  object-fit: auto;
-  object-position: center;
-  width: 100%;
+  object-position: left;
+  width: 646px;
   margin-top: 6px;
   flex-grow: 1;
-  max-width: 624px;
-
   border-radius: 8px;
   border-width: 2px;
   border-color: #212121;
+  position: relative;
+  right: 50px;
 }
 @media (max-width: 991px) {
   .img-4 {

@@ -39,6 +39,8 @@ class LogAuth extends Controller
 
         return response()->json(['token' => $token], 200);
     }
+
+
     public function logout(Request $request)
     {
         Auth::logout();
