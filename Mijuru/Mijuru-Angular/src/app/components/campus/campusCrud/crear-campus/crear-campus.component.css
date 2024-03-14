@@ -18,8 +18,9 @@ button {
 .main-container {
   position: relative;
   width: 753px;
-  height: 505px;
+  height: fit-content;
   margin: 0 auto;
+  padding-bottom:50px ;
   background: rgba(83, 82, 104, 0.76);
   border-radius: 8px;
   box-shadow: 0 17px 35px 0 rgba(26, 26, 26, 0.28);
@@ -28,7 +29,7 @@ button {
   position: relative;
   width: 635px;
   height: 71px;
-  margin: 55px 0 0 55px;
+    margin: 55px 0 0 55px;
   background: #e1e1e1;
   border: 1px solid #c1c1c1;
   overflow: visible auto;
@@ -102,7 +103,7 @@ button {
 .rectangle-1 {
   position: relative;
   width: 635px;
-  height: 334px;
+  height: fit-content;
   margin: 0 0 0 55px;
   background: #c1c1c1;
   z-index: 7;

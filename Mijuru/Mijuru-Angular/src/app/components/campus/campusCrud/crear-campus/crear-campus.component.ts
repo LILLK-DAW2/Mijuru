@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+
 
 
 @Component({
@@ -14,5 +15,10 @@ export class CrearCampusComponent implements OnInit {
   secondFormGroup: FormGroup = this._formBuilder.group({secondCtrl: ['']});
   ngOnInit(): void {
   }
+
+
+
+
+
 
 }
