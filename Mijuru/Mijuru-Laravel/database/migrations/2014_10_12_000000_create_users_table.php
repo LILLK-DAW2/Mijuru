@@ -22,10 +22,10 @@ return new class extends Migration
             $table->timestamp('fecha_n');
             $table->string('telefono')->nullable();
             $table->string('direccion')->nullable();
-            $table->string('activo')->default('N');
+            $table->string('activo')->default('D');
             $table->binary('foto_perfil')->nullable();
             $table->string('tipo_usuario')->default('N');
-            $table->string('estado')->default('A');
+            $table->string('estado')->default('1');
             $table->timestamp('deleted_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

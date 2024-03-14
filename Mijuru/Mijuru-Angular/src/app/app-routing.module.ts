@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LandigPageComponent } from "./Paginas/PreLoggin/landig-page/landig-page.component";
-import {AboutUsComponent} from "./Paginas/PreLoggin/about-us/about-us.component";
-import {LoginComponent} from "./Paginas/Login/login/login.component";
-import {RegisterComponent} from "./Paginas/Login/register/register.component";
-import {FaqsComponent} from "./Paginas/PreLoggin/faqs/faqs.component";
-import {ContactUsComponent} from "./Paginas/PreLoggin/contact-us/contact-us.component";
-import {ErrorComponent} from "./Paginas/error/error.component";
+import {LandigPageComponent } from "./paginas/PreLoggin/landig-page/landig-page.component";
+import {AboutUsComponent} from "./paginas/PreLoggin/about-us/about-us.component";
+import {LoginComponent} from "./paginas/Login/login/login.component";
+import {RegisterComponent} from "./paginas/Login/register/register.component";
+import {FaqsComponent} from "./paginas/PreLoggin/faqs/faqs.component";
+import {ContactUsComponent} from "./paginas/PreLoggin/contact-us/contact-us.component";
+import {ErrorComponent} from "./paginas/error/error.component";
 import {AppComponent} from "./app.component";
-import {CampusDashboardComponent} from "./Paginas/Campus/campus-dashboard/campus-dashboard.component";
+import {CampusDashboardComponent} from "./paginas/Campus/campus-dashboard/campus-dashboard.component";
 import {AuthGuard} from "./guards/authGuard/auth.guard";
 
 const routes: Routes = [

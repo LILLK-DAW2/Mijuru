@@ -46,13 +46,14 @@ class LogAuth extends Controller
             // Si no existe un token, generar uno nuevo
             $token = $request->session()->token();
             $user->update(['remember_token' => $token]);
-            $user->save();
         }
 
         // Iniciar sesión con el usuario
         Auth::login($user);
-
+        // Establecer como conectado
+        $user->update(['activo' => 'C']);
         // Devolver el token en la respuesta
+        $user->save();
         return response()->json(['token' => $token], 200);
     }
 
@@ -73,7 +74,7 @@ class LogAuth extends Controller
 
         if ($user) {
             // Actualizar el campo remember_token a null
-            $user->update(['remember_token' => null]);
+            $user->update(['remember_token' => null],['activo' => 'D']);
             $user->save();
             return response()->json(['mensaje' => 'Cerraste sesión exitosamente'], 200);
         } else {

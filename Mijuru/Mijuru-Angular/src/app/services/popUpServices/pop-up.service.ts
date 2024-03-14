@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {ConfirmationPopUpComponent} from "../../Components/popUps/confirmation-pop-up/confirmation-pop-up.component";
+import {ConfirmationPopUpComponent} from "../../components/popUps/confirmation-pop-up/confirmation-pop-up.component";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {PopUpComponent} from "../../Components/popUps/pop-up/pop-up.component";
+import {PopUpComponent} from "../../components/popUps/pop-up/pop-up.component";
 
 @Injectable({
   providedIn: 'root'
