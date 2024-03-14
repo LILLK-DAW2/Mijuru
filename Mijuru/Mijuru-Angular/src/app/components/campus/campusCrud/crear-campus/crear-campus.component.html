@@ -32,7 +32,16 @@
               </mat-form-field>
             </mat-list-item>
             <mat-list-item>
+              <label class="file-label">Inserta imagen de campus</label>
+              <br>
 
+              <div class="file-input-container">
+                <button class="file-input-button">Seleccionar archivo</button>
+                <input type="file" class="file-input" (change)="onFileSelected($event)">
+
+                <img *ngIf="imageUrl" [src]="imageUrl" alt="Imagen seleccionada" [style.width.px]="100" [style.height.px]="100 * (9 / 16)">
+
+              </div>
             </mat-list-item>
 
           </mat-list>
