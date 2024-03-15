@@ -89,7 +89,7 @@
                    [formControl]="myControl"
                    [matAutocomplete]="auto">
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-              <mat-option *ngFor="let user of filteredUsers | async" [value]="user">
+              <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
                 {{ user.name }}
               </mat-option>
             </mat-autocomplete>
