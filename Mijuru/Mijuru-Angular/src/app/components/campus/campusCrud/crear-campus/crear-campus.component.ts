@@ -21,8 +21,10 @@ export class CrearCampusComponent implements OnInit {
     { name: 'Alice Johnson', id: 3 },
     { name: 'Bob Brown', id: 4 }
   ];
+  myControl = new FormControl('');
   filteredUsers: Observable<any[]>;
-  searchControl = new FormControl(); // Usa la importación de FormControl aquí
+
+
 
   constructor(private _formBuilder: FormBuilder) {
     // Inicialización de los formularios reactivos
@@ -39,21 +41,19 @@ export class CrearCampusComponent implements OnInit {
       chat: false,
       entradas: false
     });
-
     // Suscripción a los cambios en el formulario de herramientas
     this.herramientasFormGroup.valueChanges.subscribe(value => {
       this.herramientas = value;
       console.log(this.herramientas)
     });
 
-    // Inicialización de la lista filtrada de usuarios
-    this.filteredUsers = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
   }
 
   ngOnInit(): void {
+    this.filteredUsers = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || ''))
+    );
   }
 
   // Función para abrir el selector de archivos al hacer clic en un botón
@@ -78,12 +78,6 @@ export class CrearCampusComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  // Función para mostrar el nombre del usuario en el autocompletado
-  displayFn(user: any): string {
-    return user && user.name ? user.name : '';
-  }
-
-  // Función para filtrar la lista de usuarios basada en el valor de búsqueda
   private _filter(value: string): any[] {
     const filterValue = value.toLowerCase();
     return this.users.filter(user => user.name.toLowerCase().includes(filterValue));

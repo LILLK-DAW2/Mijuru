@@ -47,8 +47,8 @@
         </form>
       </mat-step>
 
-      <mat-step [stepControl]="roleFormGroup">
-        <form [formGroup]="roleFormGroup">
+      <mat-step [stepControl]="herramientasFormGroup">
+        <form [formGroup]="herramientasFormGroup">
           <ng-template matStepLabel>Heramientas</ng-template>
 
           <section class="example-section" [formGroup]="herramientasFormGroup">
@@ -56,9 +56,6 @@
             <p><mat-checkbox formControlName="chat">Chat</mat-checkbox></p>
             <p><mat-checkbox formControlName="entradas">Entradas</mat-checkbox></p>
           </section>
-
-
-
           <div>
             <button mat-button matStepperPrevious>Volver</button>
             <button mat-button matStepperNext>Continuar</button>
@@ -83,9 +80,15 @@
       <mat-step [stepControl]="roleFormGroup">
         <form [formGroup]="roleFormGroup">
           <ng-template matStepLabel>Invitar usuarios</ng-template>
-          <mat-form-field>
-            <input type="text" placeholder="Buscar usuario" aria-label="Number" matInput [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-form-field class="example-full-width">
+            <mat-label>Search user</mat-label>
+            <input type="text"
+                   placeholder="Type a user name"
+                   aria-label="User"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
               <mat-option *ngFor="let user of filteredUsers | async" [value]="user">
                 {{ user.name }}
               </mat-option>
