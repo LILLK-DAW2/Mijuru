@@ -34,6 +34,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
 import {MatFileUploadModule} from "angular-material-fileupload";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 
 @NgModule({
@@ -73,6 +75,8 @@ import {MatFileUploadModule} from "angular-material-fileupload";
     MatInputModule,
     MatListModule,
     MatFileUploadModule,
+    MatCheckboxModule,
+    MatAutocompleteModule,
 
   ],
   providers: [],

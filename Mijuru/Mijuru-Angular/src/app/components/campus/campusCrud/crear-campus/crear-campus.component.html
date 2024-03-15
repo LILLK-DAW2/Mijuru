@@ -22,7 +22,8 @@
               </mat-form-field>
               <mat-form-field appearance="standard" class="marginleft">
                 <mat-label>Descripcion</mat-label>
-                <input matInput placeholder="Descripcion del campus" required>
+                <textarea matInput placeholder="Descripcion del campus" ></textarea>
+
               </mat-form-field>
           <div>
             <button mat-button matStepperNext>Continuar</button>
@@ -33,10 +34,12 @@
       <mat-step [stepControl]="imageFormGroup">
         <form [formGroup]="imageFormGroup">
           <ng-template matStepLabel>Imagen de Campus</ng-template>
-          <button mat-button (click)="onFileInputClick()">
+          <button mat-button color="primary" (click)="onFileInputClick()">
             <mat-icon>attach_file</mat-icon> Subir Imagen
             <input type="file" (change)="onFileSelected($event)" style="display: none;">
           </button>
+          <img [src]="foto" *ngIf="foto" width="30" height="30">
+
           <div>
             <button mat-button matStepperPrevious>Volver</button>
             <button mat-button matStepperNext>Continuar</button>
@@ -47,10 +50,15 @@
       <mat-step [stepControl]="roleFormGroup">
         <form [formGroup]="roleFormGroup">
           <ng-template matStepLabel>Heramientas</ng-template>
-          <button mat-button (click)="onFileInputClick()">
-            <mat-icon>attach_file</mat-icon> Subir Imagen
-            <input type="file" (change)="onFileSelected($event)" style="display: none;">
-          </button>
+
+          <section class="example-section" [formGroup]="herramientasFormGroup">
+            <h4>Select your toppings:</h4>
+            <p><mat-checkbox formControlName="chat">Chat</mat-checkbox></p>
+            <p><mat-checkbox formControlName="entradas">Entradas</mat-checkbox></p>
+          </section>
+
+
+
           <div>
             <button mat-button matStepperPrevious>Volver</button>
             <button mat-button matStepperNext>Continuar</button>
@@ -71,14 +79,18 @@
           </div>
         </form>
       </mat-step>
-      
+
       <mat-step [stepControl]="roleFormGroup">
         <form [formGroup]="roleFormGroup">
           <ng-template matStepLabel>Invitar usuarios</ng-template>
-          <button mat-button (click)="onFileInputClick()">
-            <mat-icon>attach_file</mat-icon> Subir Imagen
-            <input type="file" (change)="onFileSelected($event)" style="display: none;">
-          </button>
+          <mat-form-field>
+            <input type="text" placeholder="Buscar usuario" aria-label="Number" matInput [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let user of filteredUsers | async" [value]="user">
+                {{ user.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Volver</button>
             <button mat-button matStepperNext>Continuar</button>
@@ -102,4 +114,3 @@
 
   </div>
 </div>
-<img [src]="foto" *ngIf="foto">

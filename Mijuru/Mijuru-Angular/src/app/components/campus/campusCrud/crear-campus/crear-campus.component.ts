@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {ImageLoader} from "@angular/common";
-
-
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms"; // Importa FormControl también aquí
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-crear-campus',
@@ -10,47 +9,83 @@ import {ImageLoader} from "@angular/common";
   styleUrls: ['./crear-campus.component.css']
 })
 export class CrearCampusComponent implements OnInit {
-
-
-  constructor(private _formBuilder: FormBuilder) {}
-  datosFormGroup: FormGroup = this._formBuilder.group({datosCtrl: ['']});
-  imageFormGroup: FormGroup = this._formBuilder.group({imageCtrl: ['']});
-  roleFormGroup: FormGroup = this._formBuilder.group({roleCtrl: ['']});
-
+  datosFormGroup: FormGroup;
+  imageFormGroup: FormGroup;
+  roleFormGroup: FormGroup;
+  herramientasFormGroup: FormGroup;
   foto: any;
+  herramientas = { "chat": false, "entradas": false };
+  users = [
+    { name: 'John Doe', id: 1 },
+    { name: 'Jane Smith', id: 2 },
+    { name: 'Alice Johnson', id: 3 },
+    { name: 'Bob Brown', id: 4 }
+  ];
+  filteredUsers: Observable<any[]>;
+  searchControl = new FormControl(); // Usa la importación de FormControl aquí
+
+  constructor(private _formBuilder: FormBuilder) {
+    // Inicialización de los formularios reactivos
+    this.datosFormGroup = this._formBuilder.group({
+      datosCtrl: ['']
+    });
+    this.imageFormGroup = this._formBuilder.group({
+      imageCtrl: ['']
+    });
+    this.roleFormGroup = this._formBuilder.group({
+      roleCtrl: ['']
+    });
+    this.herramientasFormGroup = this._formBuilder.group({
+      chat: false,
+      entradas: false
+    });
+
+    // Suscripción a los cambios en el formulario de herramientas
+    this.herramientasFormGroup.valueChanges.subscribe(value => {
+      this.herramientas = value;
+      console.log(this.herramientas)
+    });
+
+    // Inicialización de la lista filtrada de usuarios
+    this.filteredUsers = this.searchControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+  }
+
   ngOnInit(): void {
   }
 
+  // Función para abrir el selector de archivos al hacer clic en un botón
   onFileInputClick(): void {
-    // Hacer clic en el input de tipo archivo al hacer clic en el botón
     const inputElement: HTMLElement | null = document.querySelector('input[type="file"]');
     if (inputElement) {
       inputElement.click();
     }
   }
 
+  // Función para manejar la selección de un archivo
   onFileSelected(event: any): void {
-    // Manejar la selección de archivo aquí
     const file = event.target.files[0];
     if (file) {
-      // Realizar acciones con el archivo seleccionado, como cargarlo o mostrar una vista previa
       console.log('Archivo seleccionado:', file);
     }
 
-    // Leer el contenido del archivo como un objeto de datos URL
     const reader = new FileReader();
     reader.onload = () => {
-      // Almacenar los datos de la imagen en la variable 'foto'
       this.foto = reader.result;
     };
     reader.readAsDataURL(file);
   }
 
+  // Función para mostrar el nombre del usuario en el autocompletado
+  displayFn(user: any): string {
+    return user && user.name ? user.name : '';
+  }
 
-
-
-
-
-
-
+  // Función para filtrar la lista de usuarios basada en el valor de búsqueda
+  private _filter(value: string): any[] {
+    const filterValue = value.toLowerCase();
+    return this.users.filter(user => user.name.toLowerCase().includes(filterValue));
+  }
 }
