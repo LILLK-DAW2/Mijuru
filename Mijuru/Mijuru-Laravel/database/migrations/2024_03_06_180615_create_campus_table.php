@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up():
+    public function up():void
     {
         Schema::create('campus', function (Blueprint $table) {
             $table->bigIncrements('id_campus');

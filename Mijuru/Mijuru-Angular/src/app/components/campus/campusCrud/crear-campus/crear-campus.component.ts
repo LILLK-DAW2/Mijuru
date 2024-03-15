@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {ImageLoader} from "@angular/common";
 
 
 
@@ -9,23 +10,44 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrls: ['./crear-campus.component.css']
 })
 export class CrearCampusComponent implements OnInit {
-  imageUrl: string | ArrayBuffer | null = null;
+
 
   constructor(private _formBuilder: FormBuilder) {}
-  firstFormGroup: FormGroup = this._formBuilder.group({firstCtrl: ['']});
-  secondFormGroup: FormGroup = this._formBuilder.group({secondCtrl: ['']});
+  datosFormGroup: FormGroup = this._formBuilder.group({datosCtrl: ['']});
+  imageFormGroup: FormGroup = this._formBuilder.group({imageCtrl: ['']});
+  roleFormGroup: FormGroup = this._formBuilder.group({roleCtrl: ['']});
+
+  foto: any;
   ngOnInit(): void {
   }
-  onFileSelected(event: any) {
-    const file: File = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.imageUrl = reader.result;
-      };
+
+  onFileInputClick(): void {
+    // Hacer clic en el input de tipo archivo al hacer clic en el botón
+    const inputElement: HTMLElement | null = document.querySelector('input[type="file"]');
+    if (inputElement) {
+      inputElement.click();
     }
   }
+
+  onFileSelected(event: any): void {
+    // Manejar la selección de archivo aquí
+    const file = event.target.files[0];
+    if (file) {
+      // Realizar acciones con el archivo seleccionado, como cargarlo o mostrar una vista previa
+      console.log('Archivo seleccionado:', file);
+    }
+
+    // Leer el contenido del archivo como un objeto de datos URL
+    const reader = new FileReader();
+    reader.onload = () => {
+      // Almacenar los datos de la imagen en la variable 'foto'
+      this.foto = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+
+
 
 
 

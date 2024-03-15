@@ -33,6 +33,8 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
+import {MatFileUploadModule} from "angular-material-fileupload";
+
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import {MatListModule} from "@angular/material/list";
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    MatFileUploadModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
