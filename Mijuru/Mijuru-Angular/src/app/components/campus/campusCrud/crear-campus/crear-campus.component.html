@@ -52,7 +52,6 @@
           <ng-template matStepLabel>Heramientas</ng-template>
 
           <section class="example-section" [formGroup]="herramientasFormGroup">
-            <h4>Select your toppings:</h4>
             <p><mat-checkbox formControlName="chat">Chat</mat-checkbox></p>
             <p><mat-checkbox formControlName="entradas">Entradas</mat-checkbox></p>
           </section>
@@ -66,19 +65,26 @@
       <mat-step [stepControl]="roleFormGroup">
         <form [formGroup]="roleFormGroup">
           <ng-template matStepLabel>Rol</ng-template>
-          <button mat-button (click)="onFileInputClick()">
-            <mat-icon>attach_file</mat-icon> Subir Imagen
-            <input type="file" (change)="onFileSelected($event)" style="display: none;">
-          </button>
+          <!-- Formulario para añadir nuevo rol -->
           <div>
-            <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Continuar</button>
+            <label for="nombreRol">Nombre del rol:</label>
+            <input type="text"  #nombreRolInput name="nombreRol" id="nombreRol" >
           </div>
+
+          <!-- Sección de checkboxes para permisos -->
+          <section class="example-section">
+            <p><mat-checkbox formControlName="chat">Acceso al chat</mat-checkbox></p>
+            <p><mat-checkbox formControlName="calendario">Calendario</mat-checkbox></p>
+            <p><mat-checkbox formControlName="entradas">Crear entradas</mat-checkbox></p>
+          </section>
+
+          <!-- Botón para crear un nuevo rol -->
+          <button (click)="crearRol()">Crear Nuevo Rol</button>
         </form>
       </mat-step>
 
-      <mat-step [stepControl]="roleFormGroup">
-        <form [formGroup]="roleFormGroup">
+      <mat-step [stepControl]="autocompleteFormControl">
+        <form [formGroup]="">
           <ng-template matStepLabel>Invitar usuarios</ng-template>
           <mat-form-field class="example-full-width">
             <mat-label>Search user</mat-label>
@@ -86,7 +92,7 @@
                    placeholder="Type a user name"
                    aria-label="User"
                    matInput
-                   [formControl]="myControl"
+                   [formControl]="autocompleteFormControl"
                    [matAutocomplete]="auto">
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
               <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">

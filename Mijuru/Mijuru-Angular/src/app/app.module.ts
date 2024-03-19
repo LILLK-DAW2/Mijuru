@@ -11,7 +11,7 @@ import { LoginComponent } from './paginas/Login/login/login.component';
 import { RegisterComponent } from './paginas/Login/register/register.component';
 import { NavBarPrelogginComponent } from './components/nav-bar-preloggin/nav-bar-preloggin.component';
 import { FooterPrelogginComponent } from './components/footer-preloggin/footer-preloggin.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ErrorComponent} from "./paginas/error/error.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PreguntasComponent} from "./paginas/PreLoggin/faqs/preguntas/preguntas.component";
@@ -60,25 +60,26 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     ConfirmationPopUpComponent,
     CrearCampusComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatDialogModule,
-    MatButtonModule,
-    NgbModule,
-    MatIconModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatFileUploadModule,
-    MatCheckboxModule,
-    MatAutocompleteModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatDialogModule,
+        MatButtonModule,
+        NgbModule,
+        MatIconModule,
+        MatStepperModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatListModule,
+        MatFileUploadModule,
+        MatCheckboxModule,
+        MatAutocompleteModule,
+        FormsModule,
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
