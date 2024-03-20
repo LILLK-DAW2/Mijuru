@@ -1,143 +1,155 @@
-<div class="main-container">
-  <div class="rectangle">
-    <div class="flex-row-bc">
-      <span class="nuevo-campus">Nuevo campus</span>
-      <div class="close">
-        <button mat-icon-button aria-label="close dialog" mat-dialog-close>
-          <mat-icon>close</mat-icon>
-        </button>
-      </div>
-      <div class="line"></div>
-    </div>
-    <span class="creaccion-de-campus">Creaccion de campus</span>
-  </div>
-  <div class="rectangle-1">
-    <mat-vertical-stepper [linear]="false" #stepper>
-      <mat-step [stepControl]="datosFormGroup">
-        <form [formGroup]="datosFormGroup">
-          <ng-template matStepLabel>Datos de Campus</ng-template>
-          <mat-form-field appearance="standard">
-            <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Nombre del campus" required>
-          </mat-form-field>
-          <mat-form-field appearance="standard" class="marginleft">
-            <mat-label>Descripcion</mat-label>
-            <textarea matInput placeholder="Descripcion del campus"></textarea>
-
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperNext>Continuar</button>
-          </div>
-        </form>
-      </mat-step>
-
-      <mat-step [stepControl]="imageFormGroup">
-        <form [formGroup]="imageFormGroup">
-          <ng-template matStepLabel>Imagen de Campus</ng-template>
-          <button mat-button color="primary" (click)="onFileInputClick()">
-            <mat-icon>attach_file</mat-icon>
-            Subir Imagen
-            <input type="file" (change)="onFileSelected($event)" style="display: none;">
+  <div class="main-container">
+    <div class="rectangle">
+      <div class="flex-row-bc">
+        <span class="nuevo-campus">Nuevo campus</span>
+        <div class="close">
+          <button mat-icon-button aria-label="close dialog" mat-dialog-close>
+            <mat-icon>close</mat-icon>
           </button>
-          <img [src]="foto" *ngIf="foto" width="30" height="30">
-
-          <div>
-            <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Continuar</button>
-          </div>
-        </form>
-      </mat-step>
-
-      <mat-step [stepControl]="herramientasFormGroup">
-        <form [formGroup]="herramientasFormGroup">
-          <ng-template matStepLabel>Heramientas</ng-template>
-
-          <section class="example-section" [formGroup]="herramientasFormGroup">
-            <p>
-              <mat-checkbox formControlName="chat">Chat</mat-checkbox>
-            </p>
-            <p>
-              <mat-checkbox formControlName="entradas">Entradas</mat-checkbox>
-            </p>
-          </section>
-          <div>
-            <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Continuar</button>
-          </div>
-        </form>
-      </mat-step>
-
-      <mat-step [stepControl]="roleFormGroup">
-        <form [formGroup]="roleFormGroup">
-          <ng-template matStepLabel>Rol</ng-template>
-          <mat-form-field>
-            <mat-label>Lista de roles</mat-label>
-            <mat-select (selectionChange)="onRoleSelectionChange($event.value)" >
-              <mat-option value="Crear nuevo Rol">Crear nuevo Rol</mat-option>
-              <mat-option *ngFor="let role of rolesData" [value]="role">{{ role.nombre }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
-          <!-- Formulario para añadir nuevo rol -->
-          <mat-form-field appearance="standard">
-            <mat-label>Nombre</mat-label>
-            <input matInput #nombreRolInput name="nombreRol" id="nombreRol" placeholder="Nombre del rol">
-          </mat-form-field>
-          <!-- Sección de checkboxes para permisos -->
-          <section class="example-section">
-            <p>
-              <mat-checkbox formControlName="chat">Acceso al chat</mat-checkbox>
-            </p>
-            <p>
-              <mat-checkbox formControlName="calendario">Calendario</mat-checkbox>
-            </p>
-            <p>
-              <mat-checkbox formControlName="entradas">Crear entradas</mat-checkbox>
-            </p>
-          </section>
-
-          <!-- Botón para crear un nuevo rol -->
-          <button (click)="crearRol()">Crear Nuevo Rol</button>
-        </form>
-      </mat-step>
-
-
-      <mat-step [stepControl]="autocompleteFormControl">
-        <form [formGroup]="">
-          <ng-template matStepLabel>Invitar usuarios</ng-template>
-          <mat-form-field class="example-full-width">
-            <mat-label>Search user</mat-label>
-            <input type="text"
-                   placeholder="Type a user name"
-                   aria-label="User"
-                   matInput
-                   [formControl]="autocompleteFormControl"
-                   [matAutocomplete]="auto">
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-              <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
-                {{ user.name }}
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Continuar</button>
-          </div>
-        </form>
-      </mat-step>
-
-
-      <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Volver</button>
-          <button mat-button (click)="stepper.reset()">Volver al inicio</button>
         </div>
-      </mat-step>
+        <div class="line"></div>
+      </div>
+      <span class="creaccion-de-campus">Creaccion de campus</span>
+    </div>
+    <div class="rectangle-1">
+      <mat-vertical-stepper [linear]="false" #stepper>
+        <mat-step [stepControl]="datosFormGroup">
+          <form [formGroup]="datosFormGroup">
+            <ng-template matStepLabel>Datos de Campus</ng-template>
+            <mat-form-field appearance="standard">
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="Nombre del campus" required>
+            </mat-form-field>
+            <mat-form-field appearance="standard" class="marginleft">
+              <mat-label>Descripcion</mat-label>
+              <textarea matInput placeholder="Descripcion del campus"></textarea>
 
-    </mat-vertical-stepper>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Continuar</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="imageFormGroup">
+          <form [formGroup]="imageFormGroup">
+            <ng-template matStepLabel>Imagen de Campus</ng-template>
+            <button mat-button color="primary" (click)="onFileInputClick()">
+              <mat-icon>attach_file</mat-icon>
+              Subir Imagen
+              <input type="file" (change)="onFileSelected($event)" style="display: none;">
+            </button>
+            <img [src]="foto" *ngIf="foto" width="30" height="30">
+
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button matStepperNext>Continuar</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="herramientasFormGroup">
+          <form [formGroup]="herramientasFormGroup">
+            <ng-template matStepLabel>Heramientas</ng-template>
+
+            <section class="example-section" [formGroup]="herramientasFormGroup">
+              <p>
+                <mat-checkbox formControlName="chat">Chat</mat-checkbox>
+              </p>
+              <p>
+                <mat-checkbox formControlName="entradas">Entradas</mat-checkbox>
+              </p>
+            </section>
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button matStepperNext>Continuar</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="roleFormGroup">
+          <form [formGroup]="roleFormGroup">
+            <ng-template matStepLabel>Rol</ng-template>
+            <mat-form-field>
+              <mat-label>Lista de roles</mat-label>
+              <mat-select (selectionChange)="onRoleSelectionChange($event.value)" >
+                <mat-option value="Crear nuevo Rol">Crear nuevo Rol</mat-option>
+                <mat-option *ngFor="let role of rolesData" [value]="role">{{ role.nombre }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br>
+            <div *ngIf="selectedRole">
+
+              <!-- Formulario para añadir nuevo rol -->
+              <mat-form-field appearance="standard">
+                <mat-label>Nombre</mat-label>
+                <input matInput #nombreRolInput name="nombreRol" id="nombreRol" placeholder="Nombre del rol">
+              </mat-form-field>
+              <!-- Sección de checkboxes para permisos -->
+              <section class="example-section">
+                <p>
+                  <mat-checkbox formControlName="chat">Acceso al chat</mat-checkbox>
+                </p>
+                <p>
+                  <mat-checkbox formControlName="calendario">Calendario</mat-checkbox>
+                </p>
+                <p>
+                  <mat-checkbox formControlName="entradas">Crear entradas</mat-checkbox>
+                </p>
+              </section>
+            </div>
+
+            <!-- Botón para crear un nuevo rol -->
+            <button mat-button color="primary" (click)="crearRol()">Guardar</button>
+          </form>
+        </mat-step>
 
 
+        <mat-step [stepControl]="autocompleteFormControl">
+          <form [formGroup]="autocompleteFormGroup">
+            <ng-template matStepLabel>Invitar usuarios</ng-template>
+            <mat-form-field class="example-full-width">
+              <mat-label>Buscar usuario</mat-label>
+              <input type="text"
+                     placeholder="Ingrese el nombre del usuario"
+                     aria-label="Usuario"
+                     matInput
+                     [formControl]="autocompleteFormControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let user of filteredUsers | async" [value]="user.name">
+                  {{ user.name }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <!-- Selector de rol -->
+            <mat-form-field>
+              <mat-label>Seleccionar Rol</mat-label>
+              <mat-select formControlName="selectedRole">
+                <mat-option *ngFor="let role of rolesData" [value]="role.nombre">{{ role.nombre }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button (click)="invitarUsuario()">Invitar</button>
+            </div>
+          </form>
+        </mat-step>
+
+
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Volver</button>
+            <button mat-button (click)="stepper.reset()">Volver al inicio</button>
+          </div>
+        </mat-step>
+
+      </mat-vertical-stepper>
+
+
+    </div>
   </div>
-</div>
