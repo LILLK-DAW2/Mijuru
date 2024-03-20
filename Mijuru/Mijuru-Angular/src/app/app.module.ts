@@ -36,6 +36,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatFileUploadModule} from "angular-material-fileupload";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
         MatCheckboxModule,
         MatAutocompleteModule,
         FormsModule,
+        MatSelectModule,
 
     ],
   providers: [],
